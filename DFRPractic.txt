@@ -30,3 +30,24 @@ python3 manage.py startapp mainbase1
 ///+++dgebase/settings.py--> initialled_apps
     ['rest_framework', 'rest_framework.authtoken', 'mainbase1',]
 ///
+
+///+++ mainbase1/models.py
+    from django.contrib.auth import  get_user_model
+    User = get_user_model()
+    class Mainbase1(models.Model):
+        owner = models.ForeignKey(User, on_delete=models.CASCADE, related_name='mainbase1', null=True)
+        reg_id = models.IntegerField(auto_created=True)
+        register_at = models.DateTimeField(auto_now_add=True)
+        pr_name = models.TextField()
+        pr_zacaz = models.TextField()
+        pr_proectir = models.TextField()
+        finished_at = models.DateTimeField(null=True)
+        is_finished = models.BooleanField(default=False)
+        estimated_finish_time = models.DateTimeField()
+///
+-----------------------------------------------------------------------------------------
+./manage.py makemigrations
+./manage.py migrate
+-----------------------------------------------------------------------------------------
+git add .
+git commit -m "Add task model"
