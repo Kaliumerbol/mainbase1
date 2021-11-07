@@ -1,3 +1,3 @@
 from django.contrib import admin
-
-# Register your models here.
+from .models import Mainbase1
+admin.site.register(Mainbase1)
