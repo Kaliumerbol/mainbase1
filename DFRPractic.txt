@@ -1,0 +1,32 @@
+Инструкция по работе и настройке DRF
+
+python3 -m venv env
+source env/bin/activate
+-----------------------------------------------------------------------------------------
+touch req.txt
+///req.txt
+django
+djangorestframework
+django-rest-auth
+pip install -r req.txt
+-----------------------------------------------------------------------------------------
+django-admin startproject dgebase .
+-----------------------------------------------------------------------------------------
+touch .gitignore
+///.gitignore
+env
+.idea
+db.sqlite3
+__pycache__/
+*.pyc
+///
+
+git init
+git add .
+git commit -m "initial commit"
+
+python3 manage.py startapp mainbase1
+-----------------------------------------------------------------------------------------
+///+++dgebase/settings.py--> initialled_apps
+    ['rest_framework', 'rest_framework.authtoken', 'mainbase1',]
+///
